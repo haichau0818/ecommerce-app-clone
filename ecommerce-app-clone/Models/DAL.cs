@@ -153,8 +153,6 @@ namespace ecommerce_app_clone.Models
                 response.StatusMessage = "Add fail";
             }
             return response;
-
-
         }
     }
 }
