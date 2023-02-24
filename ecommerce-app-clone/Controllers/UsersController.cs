@@ -25,7 +25,7 @@ namespace ecommerce_app_clone.Controllers
         {
             Response response = new Response();
             DAL dal = new DAL();
-            SqlConnection connection =new SqlConnection(_configuration.GetConnectionString("ECOMMERCE"));
+            SqlConnection connection =new SqlConnection(_configuration.GetConnectionString("ECOMMERCE").ToString());
             response = dal._register(users, connection);
             return response;
         }
@@ -33,7 +33,7 @@ namespace ecommerce_app_clone.Controllers
         [Route("login")]
         public Response login(Users users) { 
             DAL aL= new DAL();
-            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString(""));
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("ECOMMERCE").ToString());
             Response response= aL._login(users, connection);
             return response;
 
@@ -43,7 +43,7 @@ namespace ecommerce_app_clone.Controllers
         public Response viewUser(Users users)
         {
             DAL aL = new DAL();
-            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString(""));
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("ECOMMERCE").ToString());
             Response response = aL._viewUser(users, connection);
             return response;
 
@@ -54,7 +54,7 @@ namespace ecommerce_app_clone.Controllers
         public Response updateProfile(Users users)
         {
             DAL aL = new DAL();
-            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString(""));
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("ECOMMERCE").ToString());
             Response response = aL._updateProfile(users, connection);
             return response;
 
@@ -64,7 +64,7 @@ namespace ecommerce_app_clone.Controllers
         public Response addToCarts(Carts cart)
         {
             DAL aL = new DAL();
-            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString(""));
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("ECOMMERCE").ToString());
             Response response = aL._addToCart(cart, connection);
             return response;
 
